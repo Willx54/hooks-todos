@@ -4,11 +4,16 @@ import * as serviceWorker from "./serviceWorker";
 import TodosContext from "./context";
 import todosReducer from "./reducer";
 
+import TodoList from './Components/TodoList';
+
+
 const App = () => {
   const initialState = useContext(TodosContext);
   const [state, dispatch] = useReducer(todosReducer, initialState);
   return (
-    <TodosContext.Provider value={{ state, dispatch }}></TodosContext.Provider>
+    <TodosContext.Provider value={{ state, dispatch }}>
+      <TodoList />
+    </TodosContext.Provider>
   );
 };
 
