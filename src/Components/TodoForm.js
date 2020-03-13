@@ -10,16 +10,12 @@ export default function TodoForm() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log("currentTodo: ", currentTodo);
-    console.log("todo (before): ", todo);
     if (currentTodo.text) {
       dispatch({ type: "UPDATE_TODO", payload: todo });
     } else {
       dispatch({ type: "ADD_TODO", payload: todo });
     }
-
     setTodo("");
-    console.log("todo (after): ", todo);
   };
 
   useEffect(() => {
