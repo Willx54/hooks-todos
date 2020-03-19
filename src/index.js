@@ -7,7 +7,6 @@ import todosReducer from "./reducer";
 
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
-import Axios from "axios";
 
 const useAPI = endpoint => {
   const [data, setData] = useState([]);
@@ -17,7 +16,7 @@ const useAPI = endpoint => {
   }, []);
 
   const getData = async () => {
-    const response = await Axios.get(endpoint);
+    const response = await axios.get(endpoint);
     setData(response.data);
   };
 
