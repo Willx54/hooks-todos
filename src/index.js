@@ -26,7 +26,7 @@ const useAPI = endpoint => {
 const App = () => {
   const initialState = useContext(TodosContext);
   const [state, dispatch] = useReducer(todosReducer, initialState);
-  const savedTodos = useAPI("https://hooks-api.willx54.now.sh/hooks-todos");
+  const savedTodos = useAPI("https://hooks-api.willx54.now.sh/todos");
 
   useEffect(() => {
     dispatch({

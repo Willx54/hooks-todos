@@ -13,12 +13,12 @@ export default function TodoForm() {
   const handleSubmit = async event => {
     event.preventDefault();
     if (currentTodo.text) {
-      const response = await axios.patch(`https://hooks-api.willx54.now.sh/hooks-todos/${currentTodo.id}`, {
+      const response = await axios.patch(`https://hooks-api.willx54.now.sh/todos/${currentTodo.id}`, {
         text: todo
       })
       dispatch({ type: "UPDATE_TODO", payload: response.data });
     } else {
-      const response = await axios.post(`https://hooks-api.willx54.now.sh/hooks-todos`, {
+      const response = await axios.post(`https://hooks-api.willx54.now.sh/todos`, {
         id: uuidv4(),
         text: todo,
         complete: false

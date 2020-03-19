@@ -18,7 +18,7 @@ export default function TodoList() {
           >
             <span
               onDoubleClick={async () => {
-                const response = await axios.patch(`https://hooks-api.willx54.now.sh/hooks-todos/${todo.id}`, {
+                const response = await axios.patch(`https://hooks-api.willx54.now.sh/todos/${todo.id}`, {
                   complete: !todo.complete
                 })
                 dispatch({ type: "TOGGLE_TODO", payload: response.data });
@@ -37,7 +37,7 @@ export default function TodoList() {
             </button>
             <button
                 onClick={async () => {
-                  await axios.delete(`https://hooks-api.willx54.now.sh/hooks-todos/${todo.id}`);
+                  await axios.delete(`https://hooks-api.willx54.now.sh/todos/${todo.id}`);
                   dispatch({ type: "REMOVE_TODO", payload: todo });
                 }}
             >
